@@ -263,7 +263,7 @@ header .user {
     width: unset;
     height: unset;
     bottom: 0;
-    color: #000;
+    color: #00aa91;
   }
   .swiper-pagination{
       padding: 0 20px;
@@ -279,6 +279,11 @@ header .user {
   .sub-slide{
     display: none;
 }
+
+.control .bg01Active {
+    color: #000;
+}
+
 
 /* 콘텐츠02 */
 
@@ -305,8 +310,21 @@ header .user {
 
 .content02 .content02Wrap span {
     display: inline-block;
-    padding: 20px 40px;
+    padding: 20px 0px 20px 40px;
     color: #666;
+    width: 0px;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: content-span 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+@keyframes content-span{
+    from{
+        width: 0px;
+    }
+    to{
+        width: 350px;
+    }
 }
 
 /* 콘텐츠03 */
@@ -389,7 +407,7 @@ header .user {
 /* 컨텐츠04 */
 
 .content04 {
-    padding: 80px 0;
+    padding: 80px 0 0;
     border-bottom: 1px solid gray;
 }
 
@@ -654,6 +672,7 @@ header .user {
 .c5Box {
     border: 1px solid #e9e9e9;
     border-radius: 10px;
+    transition: all 0.2s;
 }
 
 .c5Box a {
@@ -670,6 +689,9 @@ header .user {
 
 .c5Box p {
     color: #999;
+}
+.c5Box:hover{
+    border: 1px solid #00aa91;
 }
 
 .c5Box01 {
@@ -709,10 +731,16 @@ header .user {
     margin: 0 10px;
 }
 
-
+.move-btn-wrap{
+    position: sticky;
+    right: 0px;
+    bottom: 0px;
+}
 .move-top{
-    position: fixed;
-    bottom: 90px;
+    /* position: fixed; */
+    position: absolute;
+
+    bottom: 30px;
     right: 160px;
     border: none;
     border-radius: 100%;

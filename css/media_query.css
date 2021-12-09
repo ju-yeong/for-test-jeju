@@ -57,7 +57,9 @@
         width: auto;
         margin-left: 5%;
     }
-
+    .c5Box01{
+        margin-right: 0;
+    }
     .content05 {
         width: 80%;
         flex-wrap: wrap;
@@ -81,7 +83,9 @@
     .content03 ul {
         width: 90%;
     }
-
+    .content04{
+        padding: 80px 0;
+    }
     .content04 h3 {
         font-size: 25px;
     }

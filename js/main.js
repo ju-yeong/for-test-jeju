@@ -1,8 +1,30 @@
 
+ AOS.init();
+
+
 $('.modal>div').click(function() {
   $('.modal').css('display','none');
 })
 
+// $('.content01').click(function(){
+//   if($('.bg01').hasClass('swiper-slide-active')){
+//     $('.swiper-button-prev, .swiper-button-next, .swiper-pagination').css('color','#fff');
+//     console.log('hey');
+//   } else {
+//     $('.swiper-button-prev, .swiper-button-next, .swiper-pagination').css('color','#000');
+//     console.log('by');
+//   }
+// })
+
+// $('.swiper-wrapper').addEventListener("drag", function() {
+//   if($('.bg01').hasClass('swiper-slide-active')){
+//     $('.swiper-button-prev, .swiper-button-next, .swiper-pagination').css('color','#fff');
+//     console.log('hey');
+//   } else {
+//     $('.swiper-button-prev, .swiper-button-next, .swiper-pagination').css('color','#000');
+//     console.log('by');
+//   }
+// }, false);
 
 
 
@@ -16,20 +38,20 @@ $(window).scroll(function(){
     $('.move-top').hide();
   }
   
-  if($(this).width() > 750){
-    if ($(this).scrollTop() > 2600){
-      $('.move-top').addClass('move-top-ab');
-    } else {
-      $('.move-top').removeClass('move-top-ab');
-    }
-  } else {
-    console.log('hey')
-    if ($(this).scrollTop() > 2150){
-      $('.move-top').addClass('move-top-ab');
-    } else {
-      $('.move-top').removeClass('move-top-ab');
-    }
-  }
+  // if($(this).width() > 750){
+  //   if ($(this).scrollTop() > 2600){
+  //     $('.move-top').addClass('move-top-ab');
+  //   } else {
+  //     $('.move-top').removeClass('move-top-ab');
+  //   }
+  // } else {
+  //   console.log('hey')
+  //   if ($(this).scrollTop() > 2150){
+  //     $('.move-top').addClass('move-top-ab');
+  //   } else {
+  //     $('.move-top').removeClass('move-top-ab');
+  //   }
+  // }
 
 });
 
@@ -61,4 +83,39 @@ var swiper = new Swiper(".mySwiper", {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
+    on: {
+      slideChange: function () {
+        if($('.swiper-slide-active').hasClass('bg01')){
+          $('.swiper-button-prev, .swiper-button-next, .swiper-pagination').addClass('bg01Active')
+        } else if (!$('.swiper-slide-active').hasClass('bg01')) {
+          $('.swiper-button-prev, .swiper-button-next, .swiper-pagination').removeClass('bg01Active')
+        }
+      }
+    }
   });
+
+//   $('.bg01').on('classChange', function() {
+//     console.log('do')
+//     if($('.bg01').hasClass('swiper-slide-active')){
+//       $('.swiper-button-prev, .swiper-button-next, .swiper-pagination').css('color','#fff');
+//       console.log('hey');
+//     } else {
+//       $('.swiper-button-prev, .swiper-button-next, .swiper-pagination').css('color','#000');
+//       console.log('by');
+//     }
+// });
+
+// $(".swiper-slide-active").attrchange({
+//   trackValues: true, // set to true so that the event object is updated with old & new values
+//   callback: function(evnt) {
+//       if(evnt.attributeName == "transform") { // which attribute you want to watch for changes
+//         if($('.bg01').hasClass('swiper-slide-active')){
+//           $('.swiper-button-prev, .swiper-button-next, .swiper-pagination').css('color','#fff');
+//           console.log('hey');
+//         } else {
+//           $('.swiper-button-prev, .swiper-button-next, .swiper-pagination').css('color','#000');
+//           console.log('by');
+//         }
+//       }
+//   }
+// });
