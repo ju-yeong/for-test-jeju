@@ -1,0 +1,29 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'NanumSquare', sans-serif; 
+    line-height: 1.5;
+    scroll-behavior: smooth;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+body .container {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.marginWrap {
+    width: 80%;
+    margin: 0 auto;
+}
