@@ -83,15 +83,15 @@ var swiper = new Swiper(".mySwiper", {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
-    on: {
-      slideChange: function () {
-        if($('.swiper-slide-active').hasClass('bg01')){
-          $('.swiper-button-prev, .swiper-button-next, .swiper-pagination').addClass('bg01Active')
-        } else if (!$('.swiper-slide-active').hasClass('bg01')) {
-          $('.swiper-button-prev, .swiper-button-next, .swiper-pagination').removeClass('bg01Active')
-        }
-      }
-    }
+    // on: {
+    //   slideChange: function () {
+    //     if($('.swiper-slide-active').hasClass('bg01')){
+    //       $('.swiper-button-prev, .swiper-button-next, .swiper-pagination').addClass('bg01Active')
+    //     } else if (!$('.swiper-slide-active').hasClass('bg01')) {
+    //       $('.swiper-button-prev, .swiper-button-next, .swiper-pagination').removeClass('bg01Active')
+    //     }
+    //   }
+    // }
   });
 
 //   $('.bg01').on('classChange', function() {
@@ -119,3 +119,15 @@ var swiper = new Swiper(".mySwiper", {
 //       }
 //   }
 // });
+
+$('body').mousedown(function(e){
+  console.log(e.target)
+  if($('.bg01').hasClass('swiper-slide-active')){
+    // $('.swiper-button-prev, .swiper-button-next, .swiper-pagination').addClass('bg01Active');
+    $('.swiper-button-prev, .swiper-button-next, .swiper-pagination').css('color','#fff')
+    console.log('hey!')
+  } else if (!$('.swiper-slide-active').hasClass('bg01')) {
+    $('.swiper-button-prev, .swiper-button-next, .swiper-pagination').css('color','#000')
+    console.log('bye')
+  }
+})
