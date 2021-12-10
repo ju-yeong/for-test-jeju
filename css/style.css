@@ -327,6 +327,87 @@ header .user {
     }
 }
 
+
+/* ====================== */
+/* === text animation === */
+
+
+  .content {
+    height: 160px;
+    overflow: hidden;
+  }
+  .content__container {
+    overflow: hidden;
+    height: 40px;
+    padding: 0 40px;
+  }
+  /* .content__container:after, .content__container:before {
+    position: absolute;
+    top: 0;
+    color: #16a085;
+    font-size: 42px;
+    line-height: 40px;
+    animation-name: opacity;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  } */
+  .content__container__text {
+    font-weight: 600;
+    display: inline;
+    float: left;
+    margin: 0;
+  }
+  .content__container__list {
+    font-weight: 500;
+    margin-top: 0;
+    padding-left: 110px;
+    text-align: left;
+    list-style: none;
+    animation-name: change;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+  }
+  .content__container__list__item {
+    line-height: 60px;
+    margin: 0;
+  }
+  @keyframes opacity {
+    0%, 100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes change {
+    0%, 12.66%, 100% {
+      transform: translateY(37%);
+    }
+    16.66%, 29.32% {
+      transform: translateY(13%);
+    }
+    33.32%, 45.98% {
+      transform: translateY(-13%);
+    }
+    49.98%, 62.64% {
+      transform: translateY(-37%);
+    }
+    66.64%, 79.3% {
+      transform: translateY(-13%);
+    }
+    83.3%, 95.96% {
+      transform: translateY(13%);
+    }
+  }
+  
+
+
+/* = text animation end = */
+/* ====================== */
+
+
+
 /* 콘텐츠03 */
 
 .content03 {
@@ -408,7 +489,6 @@ header .user {
 
 .content04 {
     padding: 80px 0 0;
-    border-bottom: 1px solid gray;
 }
 
 .content04 h3 {
@@ -663,11 +743,20 @@ header .user {
 /* 컨텐츠 05 */
 
 .content05 {
-    margin: 100px auto;
+    position: relative;
+    width: 200%;
+    transform: translate(-25%, -10px);
+    background-color: #00aa91;
+    padding: 135px 0 100px 0;
+    border-radius: 50% 50% 0 0;
+}
+.content05-wrap{
+    margin: 0 auto;
     width: 1000px;
     display: flex;
     justify-content: space-between;
 }
+
 
 .c5Box {
     border: 1px solid #e9e9e9;
@@ -690,18 +779,17 @@ header .user {
 .c5Box p {
     color: #999;
 }
-.c5Box:hover{
-    border: 1px solid #00aa91;
-}
 
 .c5Box01 {
     background: url(../img/bn_order01.png) no-repeat right bottom;
     background-position-x: 92%;
+    background-color: #fff;
 }
 
 .c5Box02 {
     background: url(../img/bn_order02.png) no-repeat right bottom;
     background-position-x: 92%;
+    background-color: #fff;
 }
 
 /* 컨텐츠06 */
